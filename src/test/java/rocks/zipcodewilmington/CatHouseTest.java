@@ -73,4 +73,41 @@ public class CatHouseTest {
         Assert.assertEquals(expectedCats, actualCats);
     }
 
+    @Test
+    public void getCatByIdTest() {
+        // Given
+        Cat cat = new Cat(null,null,123);
+        Cat cat2 = new Cat(null,null,321);
+        Integer expectedCats = 0;
+
+        // When
+        CatHouse.add(cat);
+        CatHouse.add(cat2);
+        CatHouse.remove(123);
+        CatHouse.remove(321);
+        Integer actualCats = CatHouse.getNumberOfCats();
+
+        // Then
+        Assert.assertEquals(expectedCats, actualCats);
+    }
+
+    @Test
+    public void getNumberOfCatsTest() {
+        // Given
+        Cat cat = new Cat(null,null,null);
+        Integer expectedCats = 6;
+
+        // When
+        CatHouse.add(cat);
+        CatHouse.add(cat);
+        CatHouse.add(cat);
+        CatHouse.add(cat);
+        CatHouse.add(cat);
+        CatHouse.add(cat);
+        Integer actualCats = CatHouse.getNumberOfCats();
+
+        // Then
+        Assert.assertEquals(expectedCats, actualCats);
+    }
+
 }
