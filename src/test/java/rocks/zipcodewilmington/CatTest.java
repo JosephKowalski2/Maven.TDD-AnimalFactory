@@ -81,4 +81,35 @@ public class CatTest {
         Assert.assertEquals(expectedSpeak, actualSpeak);
     }
 
+    @Test
+    public void eatTest() {
+        // Given
+        Cat cat = new Cat(null, null, null);
+        Food food = new Food();
+        Integer expectedEat = 4;
+
+        // When
+        cat.eat(food);
+        cat.eat(food);
+        cat.eat(food);
+        cat.eat(food);
+        Integer actualEat = cat.getNumberOfMealsEaten();
+
+        // Then
+        Assert.assertEquals(expectedEat, actualEat);
+    }
+
+    @Test
+    public void getIdTest() {
+        // Given
+        Cat cat = new Cat(null, null, 123);
+        Integer expectedId = 123;
+
+        // When
+        Integer actualId = cat.getId();
+
+        // Then
+        Assert.assertEquals(expectedId, actualId);
+    }
+
 }
