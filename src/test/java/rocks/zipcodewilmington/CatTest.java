@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -110,6 +112,24 @@ public class CatTest {
 
         // Then
         Assert.assertEquals(expectedId, actualId);
+    }
+
+    @Test
+    public void animalInheritanceTest() {
+        // Given
+        Cat cat = new Cat(null, null, null);
+
+        // Then
+        Assert.assertTrue(cat instanceof Animal);
+    }
+
+    @Test
+    public void mammalInheritanceTest() {
+        // Given
+        Cat cat = new Cat(null, null, null);
+
+        // Then
+        Assert.assertTrue(cat instanceof Mammal);
     }
 
 }
