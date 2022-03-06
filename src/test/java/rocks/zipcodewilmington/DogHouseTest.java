@@ -109,22 +109,20 @@ public class DogHouseTest {
     }
 
     @Test
-    public void getNumberOfCatsTest() {
+    public void getNumberOfDogsTest() {
         // Given
-        Cat cat = new Cat(null,null,null);
-        Integer expectedCats = 6;
+        Dog dog = new Dog(null,null,null);
+        Integer expectedDogs = 4;
 
         // When
-        CatHouse.add(cat);
-        CatHouse.add(cat);
-        CatHouse.add(cat);
-        CatHouse.add(cat);
-        CatHouse.add(cat);
-        CatHouse.add(cat);
-        Integer actualCats = CatHouse.getNumberOfCats();
+        DogHouse.add(dog);
+        DogHouse.add(dog);
+        DogHouse.add(dog);
+        DogHouse.add(dog);
+        Integer actualDogs = DogHouse.getNumberOfDogs();
 
         // Then
-        Assert.assertEquals(expectedCats, actualCats);
+        Assert.assertEquals(expectedDogs, actualDogs);
     }
 
 
