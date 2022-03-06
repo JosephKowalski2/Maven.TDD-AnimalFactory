@@ -7,6 +7,7 @@ import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import static java.util.Calendar.JANUARY;
@@ -78,17 +79,20 @@ public class CatHouseTest {
         // Given
         Cat cat = new Cat(null,null,123);
         Cat cat2 = new Cat(null,null,321);
-        Integer expectedCats = 0;
+        cat.setName("Azula");
+        cat2.setName("Aang");
+        Date date = new Date(2019, Calendar.OCTOBER, 12);
+        cat.setBirthDate(date);
+        cat2.setBirthDate(date);
+        Cat expectedCat = cat;
 
         // When
         CatHouse.add(cat);
         CatHouse.add(cat2);
-        CatHouse.remove(123);
-        CatHouse.remove(321);
-        Integer actualCats = CatHouse.getNumberOfCats();
+        Cat actualCat = CatHouse.getCatById(123);
 
         // Then
-        Assert.assertEquals(expectedCats, actualCats);
+        Assert.assertEquals(expectedCat, actualCat);
     }
 
     @Test
